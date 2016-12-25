@@ -9,8 +9,8 @@ RUN apt-get install -y wget
 # RUN apt-get install -y openjdk-7-jre-headless lib32z1 lib32ncurses5 lib32bz2-1.0 g++-multilib
 
 # Main Android SDK
-RUN wget "https://dl.google.com/android/repository/tools_r25.2.3-linux.zip"
-RUN unzip tools_r25.2.3-linux.zip -d /opt/
+RUN wget -q "https://dl.google.com/android/repository/tools_r25.2.3-linux.zip"
+RUN unzip tools_r25.2.3-linux.zip -d /opt/android-sdk-linux
 RUN echo y | /opt/android-sdk-linux/tools/android update sdk --all --filter platform-tools,build-tools-25.0.2 --no-ui --force
 
 ENV ANDROID_HOME /opt/android-sdk-linux
