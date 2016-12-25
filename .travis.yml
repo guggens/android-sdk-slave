@@ -1,0 +1,9 @@
+sudo: required
+
+services:
+  - docker
+  
+script:  
+  - docker build -t guggens/android-sdk-slave:latest .
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push guggens/android-sdk-slave:latest
