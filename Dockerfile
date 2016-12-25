@@ -10,7 +10,7 @@ RUN apt-get install -y wget
 
 # Main Android SDK
 RUN wget -q "https://dl.google.com/android/repository/tools_r25.2.3-linux.zip"
-RUN unzip tools_r25.2.3-linux.zip -d /opt/android-sdk-linux
+RUN unzip -q tools_r25.2.3-linux.zip -d /opt/android-sdk-linux
 RUN echo y | /opt/android-sdk-linux/tools/android update sdk --all --filter platform-tools,build-tools-25.0.2 --no-ui --force
 
 ENV ANDROID_HOME /opt/android-sdk-linux
